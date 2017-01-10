@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <script src="//cdn.auth0.com/js/auth0/8.0.4/auth0.min.js"></script>
     <script src="auth0-variables.js"></script>
-    <script src="callback.js"></script>
+    <script>
+    auth0js.parseHash(window.location.hash, function (err, response) {
+        parent.postMessage(err || response, 'http://localhost:3000');
+    });
+    </script>
 </head>
 <body></body>
 </html>
