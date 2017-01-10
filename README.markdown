@@ -14,4 +14,4 @@ To start the sample, start a web server in the root of this repository at port 3
 make
 ```
 
-and then browse to http://localhost:3000.
+and then browse to [http://localhost:3000](http://localhost:3000).
