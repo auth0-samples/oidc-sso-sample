@@ -23,9 +23,7 @@ function saveAuthResult (result) {
 }
 
 function renew () {
-    auth0js.renewAuth({
-        redirectUri: 'http://localhost:3000/callback.html',
-        usePostMessage: true
+    auth0js.checkSession({
     }, function (err, result) {
         if (err) {
             alert(`Could not get a new token using silent authentication (${err.error}). Redirecting to login page...`);
