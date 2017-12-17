@@ -25,9 +25,10 @@ We are checking two things in local storage to detect if a user is logged in or 
 * `expirationDate`: the expiration date of this token, calculated using the `expires_in` response parameter after a successful authentication
 
 If there is no valid access token present in local storage, the user is not logged in to our application, but they might have logged in via SSO to another application.
+
 We can detect if this is the case by calling the `checkSession` method of auth0.js, which will attempt to silently authenticate the user inside an iframe.
 
-Silent authentication works in the same way as regular authentication (i.e. redirects the user to `/authorize`), but with some differences:
+Silent authentication works in the same way as regular authentication (i.e. redirects the user to `/authorize`), but with some differences (all of this is done by the checkSession function):
 
 * A `prompt=none` parameter is added to the redirect to `/authorize`.
 This causes Auth0 to return an error in case the user is not logged in via SSO instead of displaying a login page.
