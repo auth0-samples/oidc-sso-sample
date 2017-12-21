@@ -11,5 +11,5 @@ const auth0js = new auth0.WebAuth({
     audience: 'https://' + AUTH0_DOMAIN + '/userinfo',
     scope: 'openid profile',
     responseType: 'token',
-    redirectUri: 'http://localhost:3000'
+    redirectUri: 'http://localhost:5000'
 });
